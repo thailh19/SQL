@@ -1,0 +1,34 @@
+package test;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import database.JDBCUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		//Step1: create connection
+		Connection c = JDBCUtil.initConnection();
+		JDBCUtil.printInfor(c);
+		
+		try {
+			//Step2: create statement
+			
+			Statement st = c.createStatement();
+			
+			//Step3: run SQL command
+			
+			//Step4: process some results from B3
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//Step5: close connection
+		JDBCUtil.closeConnection(c);
+	}
+
+}

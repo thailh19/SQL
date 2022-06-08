@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.jdbc.Driver"/>
+    <fullyQualifiedTypeName name="com.mysql.jdbc.Driver"/>
+    <fullyQualifiedTypeName name="dataaccessobject.DAOInterface"/>
+    <fullyQualifiedTypeName name="model.KhachHangModel"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="database.JDBCUtil"/>
+    <fullyQualifiedTypeName name="model.SachModel"/>
+    <fullyQualifiedTypeName name="dataaccessobject.SachDAO"/>
+    <fullyQualifiedTypeName name="model.KhachHang"/>
+    <fullyQualifiedTypeName name="model.Sach"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="dataaccessobject.KhachHangDAO"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="model.User"/>
+    <fullyQualifiedTypeName name="dataaccessobject.UserDAO"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="test.TestUserDAO"/>
+</qualifiedTypeNameHistroy>

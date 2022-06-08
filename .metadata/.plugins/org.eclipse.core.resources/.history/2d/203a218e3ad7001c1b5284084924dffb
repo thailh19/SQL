@@ -1,0 +1,30 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class JDBCUtil {
+	
+	public static Connection initConnection () {
+		Connection c = null;
+		
+		String url = "jdbc:mySQL://localhost//mydata";
+		String username = "root";
+		String password = "";
+		
+		try {
+			c = DriverManager.getConnection(url, username, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return c;
+	}
+
+	public static void closeConnection (Connection c) {
+		
+	}
+
+
+}

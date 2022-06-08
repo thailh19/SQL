@@ -1,0 +1,7 @@
+package model;
+
+public class KhachHangModel {
+	private String hoVaTen, id;
+	private Date ngaySinh;
+	private String diaChi;
+}

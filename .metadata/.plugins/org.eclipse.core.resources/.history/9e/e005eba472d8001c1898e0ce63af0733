@@ -1,0 +1,139 @@
+package test;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Random;
+
+import dataaccessobject.UserDAO;
+import model.User;
+
+public class TestUserDAO {
+	public static int test_case = 30;
+	public static ArrayList<User> arr, arr2; 
+
+	public static void main(String[] args) {
+//		User user = new User("thu.ky", "10a", "Thư Kỳ");
+//		UserDAO.getInstance().insert(user);
+//		User user = new User();
+//		user.setUsername("thu.ky");
+//		UserDAO.getInstance().delete2(user);
+		
+//		ArrayList<User>  arrUser = UserDAO.getInstance().selectAll2();
+//		for (User user2 : arrUser) {
+//			System.out.println(user2);
+//		}
+		
+//		User user = new User("XXX' OR 1=1; -- ", "", "");
+//		System.out.println(UserDAO.getInstance().selectById(user));
+//		System.out.println(UserDAO.getInstance().selectById2(user));
+		
+//		ArrayList<User>  arrUser = UserDAO.getInstance().selectByCondition2("username= 'truong.man'");
+//		for (User user2 : arrUser) {
+//			System.out.println(user2);
+//		}
+		
+		System.out.println("---createDataUser test---");
+		timenow();
+		createDataUser();
+		timenow();
+		
+		// insert test
+		System.out.println("---insert test---");
+		timenow();
+		for (int i = 0; i < test_case; i++) {
+			UserDAO.getInstance().insert(arr.get(i));
+		}
+		timenow();
+		for (int i = 0; i < test_case; i++) {
+			UserDAO.getInstance().insert2(arr2.get(i));
+		}
+		timenow();
+		
+		// update test
+		createDataUser();
+		System.out.println("---update test---");
+		timenow();
+		for (int i = 0; i < test_case; i++) {
+			UserDAO.getInstance().update(arr.get(i));
+		}
+		timenow();
+		for (int i = 0; i < test_case; i++) {
+			UserDAO.getInstance().update2(arr2.get(i));
+		}
+		timenow();
+		
+		//delete test
+		System.out.println("---delete test---");
+		createNullDataUser();
+		timenow();
+		for (int i = 0; i < test_case; i++) {
+			UserDAO.getInstance().delete(arr.get(i));
+		}
+		timenow();
+		for (int i = 0; i < test_case; i++) {
+			UserDAO.getInstance().delete2(arr2.get(i));
+		}
+		timenow();
+		
+		
+	}
+	
+	public static String createPassword (int l1, int l2) {
+		String result = "";
+		Random rd = new Random();
+		int len = rd.nextInt(l1,l2);
+		for (int i = 0; i < len; i++) {
+			char c = (char) rd.nextInt(97,123);
+			result += c;
+		}
+		return result;
+	}
+	
+	public static String createName () {
+		String result = "";
+		Random rd = new Random();
+		int len = rd.nextInt(2,5);
+		for (int i = 0; i < len; i++) {
+			result += createPassword(2, 7) + " ";
+		}
+		result.trim();
+		return result;
+	}
+
+	public static void timenow () {
+		Date now = new Date(); // java.util.Date, NOT java.sql.Date or java.sql.Timestamp!
+		String format2 = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss.SSS Z", Locale.ENGLISH).format(now);
+		System.out.println(format2);
+	}
+	
+	public static void createDataUser () {
+		arr = new ArrayList<User>();
+		arr2 = new ArrayList<User>();
+		
+		for (int i = 0; i < test_case; i++) {
+			User user = new User("test.id_" + i, createPassword(5, 11), createName());
+			User user2 = new User ("test.id_" + (i + test_case), user.getPassword(), user.getName());
+			arr.add(user);
+			arr2.add(user2);
+		}
+	}
+	
+	public static void createNullDataUser() {
+		ArrayList<User> arr = new ArrayList<User>();
+		
+		for (int i = 0; i < test_case; i++) {
+			User user = new User("test.id_" + i, "", "");
+			User user2 = new User ("test.id_" + (i + test_case), "", "");
+			arr.add(user);
+			arr2.add(user2);
+		}
+	}
+
+	
+	
+	
+	
+	
+}

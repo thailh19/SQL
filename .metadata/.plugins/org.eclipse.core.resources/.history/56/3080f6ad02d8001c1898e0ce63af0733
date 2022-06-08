@@ -1,0 +1,43 @@
+package dataaccessobject;
+
+import java.util.ArrayList;
+
+import model.KhachHangModel;
+
+public class KhachHangDAO implements DAOInterface<KhachHangModel>{
+
+	public static KhachHangDAO getInstance() {
+		return new KhachHangDAO();
+	}
+	
+	@Override
+	public int insert(KhachHangModel t) {
+		return 0;
+	}
+
+	@Override
+	public int update(KhachHangModel t) {
+		return 0;
+	}
+
+	@Override
+	public int remove(KhachHangModel t) {
+		return 0;
+	}
+
+	@Override
+	public ArrayList<KhachHangModel> selectAll() {
+		return null;
+	}
+
+	@Override
+	public KhachHangModel selectById(KhachHangModel t) {
+		return null;
+	}
+
+	@Override
+	public ArrayList<KhachHangModel> selectByCondition(String condition) {
+		return null;
+	}
+
+}

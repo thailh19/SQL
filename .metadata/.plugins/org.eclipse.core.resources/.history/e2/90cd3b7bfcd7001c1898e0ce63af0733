@@ -1,0 +1,5 @@
+package model;
+
+public class SachModel {
+	private String id, tenSach, moTa;
+}

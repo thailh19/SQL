@@ -1,0 +1,14 @@
+package database;
+
+public class JDBCUtil {
+	
+	public static void initConnection () {
+		
+	}
+
+	public static void closeConnection () {
+		
+	}
+
+
+}

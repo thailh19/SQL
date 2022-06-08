@@ -1,0 +1,24 @@
+package test;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import database.JDBCUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Connection c = JDBCUtil.initConnection();
+		JDBCUtil.printInfor(c);
+		JDBCUtil.closeConnection(c);
+		
+		
+		try {
+			System.out.println(c.isClosed());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
